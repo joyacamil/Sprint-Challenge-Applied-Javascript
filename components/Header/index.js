@@ -8,31 +8,29 @@
 //    <span class="temp">98°</span>
 //  </div >
 // And add it to the DOM in the .header-container component
-// const headerContainer = document.querySelector('.header-container');
 
-// function Header(dateObj,hOneObj,tempObj) {
-//   // Pulling Elements
-//   let theHeader = document.createElement('div');
-//   let theDate = document.createElement('span');
-//   let h1 = document.createElement('h1');
-//   let theTemp = document.createElement('span');
+function Header(dateObj, titleObj, tempObj) {
+  const header = document.createElement('div');
+  const date = document.createElement('span');
+  const title = document.createElement('h1');
+  const temp = document.createElement('span');
 
-//   theDate.textContent = dateObj;
-//   h1.textContent = hOneObj;
-//   theTemp.textContent = tempObj;
-  
-//   // Added Classes
-//   theHeader.classList.add('header');
-//   theDate.classList.add('date');
-//   theTemp.classList.add('temp');
+  header.classList.add('header');
+  date.classList.add('date');
+  temp.classList.add('temp');
 
-// // Structure
-//   headerContainer.prepend(header);
-//   header.appendChild(date);
-//   header.appendChild(h1);
-//   header.appendChild(temp);
+  date.textContent = dateObj;
+  title.textContent = titleObj;
+  temp.textContent = tempObj;
 
-//   return header;
-// }
+  header.appendChild(date);
+  header.appendChild(title);
+  header.appendChild(temp);
 
-// Header('SMARCH 28, 2019', 'Lambda Times', '98°');
+  return header;
+}
+
+const newHeader = Header('SMARCH 28, 2019', 'Lambda Times', '98°');
+const headerContainer = document.querySelector('.header-container');
+
+headerContainer.appendChild(newHeader)
